@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class HealthMana : MonoBehaviour
 {
-	[SerializeField]
+	
 	private int _health = 5;
-	[SerializeField]
-	private int _mana = 5;
+	private int _mana = 3;
 
 	private GameManager _gm;
 	private UIManager _UIM;
@@ -35,7 +34,6 @@ public class HealthMana : MonoBehaviour
 		{
 			_health = 0;
 			_gm.OnPlayerDeath();
-			_UIM.OnPlayerDeath();
 			Destroy(this.gameObject);
 		}
 	}
@@ -45,7 +43,7 @@ public class HealthMana : MonoBehaviour
 		//update UI
 
 		_mana -= 1;
-
+		print("Current Mana:" + _mana);
 		if(_mana > -1)
 			_UIM.UpdatePlayerMana(_mana);
 
@@ -62,5 +60,10 @@ public class HealthMana : MonoBehaviour
 	public int GetMana()
 	{
 		return _mana;
+	}
+	public void SetHealthMana(int h, int m)
+	{
+		_health = h;
+		_mana = m;
 	}
 }
