@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	private int mana;
 
+
 	private void Start()
 	{
 		_UIM = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -29,6 +30,24 @@ public class GameManager : MonoBehaviour
 		print("Player Has Died");
 		Time.timeScale = 0;
 		_UIM.OnPlayerDeath();
+	}
+	public void PuzzleComplete(int puzzleNum)
+	{
+		print("PuzzleComplete:" + puzzleNum);
+		switch(puzzleNum)
+		{
+			case 1://puzzle1
+				   //update checkpoint to puzzle1
+				   //add lives || mana for player
+				break;
+			case 2://puzzle2
+				break;
+			case 3://puzzle3
+				break;
+			default:
+				Debug.LogError(puzzleNum + "Not found");
+				break;
+		}
 	}
 	
 }
