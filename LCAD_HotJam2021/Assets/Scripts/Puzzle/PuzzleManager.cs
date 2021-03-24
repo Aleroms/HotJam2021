@@ -23,17 +23,6 @@ public class PuzzleManager : MonoBehaviour
 	}
 	private void CheckPuzzles()
 	{
-		/*
-		if(Mathf.Approximately(puzzle1Arr[0].rotation.z, 0f)&&
-			Mathf.Approximately(puzzle1Arr[1].rotation.z, 0f) &&
-			Mathf.Approximately(puzzle1Arr[2].rotation.z, 0f) &&
-			Mathf.Approximately(puzzle1Arr[3].rotation.z, 0f))
-		{
-			print("puzzle complete >> PuzzleManager");
-			puzzle1 = true;
-			NotifyGM();
-			Puzzle1Win();
-		}*/
 
 		
 		if (puzzle1Arr[0].rotation.z == 0 &&
