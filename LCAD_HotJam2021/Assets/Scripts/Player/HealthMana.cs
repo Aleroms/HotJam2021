@@ -24,6 +24,8 @@ public class HealthMana : MonoBehaviour
 		//update UIManager
 		//check to see if health = 0; update GameManager
 
+		FindObjectOfType<AudioManager>().Play("PlayerDamage");
+
 		_health -= 1;
 		print("Current Health: " + _health);
 

@@ -19,6 +19,7 @@ public class PuzzleManager : MonoBehaviour
 	}
 	public void UpdatePuzzle()
 	{
+		FindObjectOfType<AudioManager>().Play("Puzzle");
 		CheckPuzzles();
 	}
 	private void CheckPuzzles()
