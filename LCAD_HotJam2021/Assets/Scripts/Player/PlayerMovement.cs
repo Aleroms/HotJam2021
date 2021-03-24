@@ -28,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
 	private void Update()
 	{
         //used to register input
+        Movement();
+            
+	}
+    private void Movement()
+	{
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -49,13 +54,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             _audioSource.Stop();
-            
-	}
+    }
 	// Update is called once per frame
 	private void FixedUpdate()
     {
         //used for physics
-
         _rb.MovePosition(_rb.position + movement * _playerSpeed * Time.fixedDeltaTime);
     }
 }

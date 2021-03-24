@@ -46,17 +46,17 @@ public class PuzzleManager : MonoBehaviour
 		if (puzzle1)
 		{
 			_gm.PuzzleComplete(1);
-			//puzzle1 = false;
+			FindObjectOfType<CaveLogic>().PuzzleComplete();
 		}
 		else if(puzzle2)
 		{
 			_gm.PuzzleComplete(2);
-			puzzle2 = false;
+			
 		}
 		else if(puzzle3)
 		{
 			_gm.PuzzleComplete(3);
-			puzzle3 = false;
+			
 		}
 	}
 	private void Puzzle1Win()
