@@ -13,7 +13,20 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	private int mana;
 
+	public static GameManager instance;
 
+	private void Awake()
+	{
+		if (instance == null)
+			instance = this;
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+
+		DontDestroyOnLoad(gameObject);
+	}
 	private void Start()
 	{
 		_UIM = GameObject.Find("Canvas").GetComponent<UIManager>();

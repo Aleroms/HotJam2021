@@ -22,6 +22,7 @@ public class ExitCave : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		print("in trigger");
 		if(collision.CompareTag("Player"))
 		{
 			exitText.SetActive(true);

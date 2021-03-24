@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Puzzle : MonoBehaviour
 {
+	[SerializeField]
+	private int ID;
+
 	private PuzzleManager _pm;
 
 	private bool _isComplete = false;
@@ -22,7 +25,7 @@ public class Puzzle : MonoBehaviour
 		if(!_isComplete)
 		{
 			transform.Rotate(0f, 0f, 90f);
-			_pm.UpdatePuzzle();
+			_pm.UpdatePuzzle(ID);
 		}
 	}
 	public void PuzzleWin()
