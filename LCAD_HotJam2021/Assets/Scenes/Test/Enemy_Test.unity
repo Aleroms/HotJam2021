@@ -210,10 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50856c19d8f2be94b83127e864db28db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _speed: 3
   _startTime: 3
   _approachDistance: 5
-  _stoppingDistance: 1
+  _stoppingDistance: 2
   _moveSpots:
   - {fileID: 1364172847}
   - {fileID: 1932736444}
