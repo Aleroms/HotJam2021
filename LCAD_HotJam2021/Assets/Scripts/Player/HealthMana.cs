@@ -10,6 +10,7 @@ public class HealthMana : MonoBehaviour
 
 	private GameManager _gm;
 	private UIManager _UIM;
+	private AudioManager _AM;
 	private void Start()
 	{
 		_gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -17,6 +18,9 @@ public class HealthMana : MonoBehaviour
 
 		_UIM = GameObject.Find("Canvas").GetComponent<UIManager>();
 		if (_UIM == null) Debug.LogError("UIM is null");
+
+		_AM = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+		if (_AM == null) Debug.LogError("audio manager is null");
 	}
 	public void Damage()
 	{
@@ -24,7 +28,8 @@ public class HealthMana : MonoBehaviour
 		//update UIManager
 		//check to see if health = 0; update GameManager
 
-		FindObjectOfType<AudioManager>().Play("PlayerDamage");
+		//FindObjectOfType<AudioManager>().Play("PlayerDamage");
+		_AM.Play("PlayerDamage");
 
 		_health -= 1;
 		print("Current Health: " + _health);
