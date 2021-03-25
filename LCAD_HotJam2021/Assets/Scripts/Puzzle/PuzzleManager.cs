@@ -33,13 +33,14 @@ public class PuzzleManager : MonoBehaviour
 		_gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (_gm == null) Debug.LogError("gm is null");
 
-		_puzzleChecker = GameObject.Find("PuzzleChecker").GetComponent<PuzzleChecker>();
-		if (_puzzleChecker == null) Debug.LogError("puzzlechecker is null");
+		//_puzzleChecker = GameObject.Find("PuzzleChecker").GetComponent<PuzzleChecker>();
+		//if (_puzzleChecker == null) Debug.LogError("puzzlechecker is null");
 	}
 	public void UpdatePuzzle(int id)
 	{
+		_puzzleChecker = GameObject.Find("PuzzleChecker").GetComponent<PuzzleChecker>();
 		FindObjectOfType<AudioManager>().Play("Puzzle");
-
+		
 		if(_puzzleChecker.CheckPuzzle())
 		{
 			switch(id)
