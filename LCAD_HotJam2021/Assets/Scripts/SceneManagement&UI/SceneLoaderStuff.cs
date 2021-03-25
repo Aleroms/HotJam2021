@@ -5,6 +5,21 @@ using UnityEngine;
 
 public class SceneLoaderStuff : MonoBehaviour
 {
+	protected static Transform playerPosition;
+	protected static int caveID;
+
+	public static SceneLoaderStuff instance;
+
+	
+	public  void PlayerPosition(Transform pl, int cid)
+	{
+		print("here");
+		playerPosition = pl;
+		caveID = cid;
+
+		print("playerID" + playerPosition.position + "\nCaveID:" + caveID);
+
+	}
 	public void ReloadCurrentLevel()
 	{
 		Time.timeScale = 1;

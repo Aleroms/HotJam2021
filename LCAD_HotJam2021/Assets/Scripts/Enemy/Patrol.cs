@@ -18,7 +18,7 @@ public class Patrol : MonoBehaviour
 
     [SerializeField]
     private Transform[] _moveSpots;
-    [SerializeField]
+    
     private Transform _target;//the player
 
     private HealthMana _player;

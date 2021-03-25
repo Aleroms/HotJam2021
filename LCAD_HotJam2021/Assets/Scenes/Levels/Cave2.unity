@@ -575,7 +575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4c325ade36136409b7990643822556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitText: {fileID: 1336522856}
+  _text: {fileID: 1336522856}
+  _caveID: 2
   levelName: Town
 --- !u!61 &911227535
 BoxCollider2D:
@@ -809,7 +810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217774171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8000007, y: -2.6799998, z: -10}
+  m_LocalPosition: {x: -7.8, y: -2.6799998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1294,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862736175700772302, guid: 6cecec5c1245c294aabbdced5172dd62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.8000007
+      value: -7.8
       objectReference: {fileID: 0}
     - target: {fileID: 4862736175700772302, guid: 6cecec5c1245c294aabbdced5172dd62, type: 3}
       propertyPath: m_LocalPosition.y

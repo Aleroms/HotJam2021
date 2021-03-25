@@ -657,7 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4c325ade36136409b7990643822556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitText: {fileID: 1336522856}
+  _text: {fileID: 1336522856}
+  _caveID: 3
   levelName: Town
 --- !u!61 &911227535
 BoxCollider2D:

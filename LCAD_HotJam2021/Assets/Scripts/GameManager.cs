@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	private int mana;
 
+
 	public static GameManager instance;
 
 	private void Awake()
