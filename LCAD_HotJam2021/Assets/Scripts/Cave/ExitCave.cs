@@ -8,6 +8,9 @@ public class ExitCave : MonoBehaviour
 	private GameObject exitText;
     private SceneLoaderStuff loaderStuff;
 	private bool _insideTrigger = false;
+
+	[SerializeField]
+	private string levelName;
 	private void Start()
 	{
 		loaderStuff = GameObject.Find("SceneLoader").GetComponent<SceneLoaderStuff>();
@@ -17,7 +20,7 @@ public class ExitCave : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Q) && _insideTrigger)
 		{
-			loaderStuff.LoadLevelByName("MainMenu");
+			loaderStuff.LoadLevelByName(levelName);
 		}
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
