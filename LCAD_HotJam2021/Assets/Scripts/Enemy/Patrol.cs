@@ -5,16 +5,19 @@ using UnityEngine;
 public class Patrol : MonoBehaviour
 {
     [SerializeField]
-    private float _speed;
+    private float _speed;//enemy
     [SerializeField]
-    private float _startTime;
+    private float _startTime;//how long of a waitTime for enemy at a spot
     [SerializeField]
-    private float _approachDistance;
+    private float _approachDistance;//how far enemy can see the player
     [SerializeField]
-    private float _stoppingDistance;
+    private float _stoppingDistance;//distance between where enemy stops & player
+    [SerializeField]
+    private float _damageCooldown;
     private float _waitTime;
 
     private int _randSpot;
+    private bool _isHurt = false;
 
     [SerializeField]
     private Transform[] _moveSpots;
@@ -40,9 +43,19 @@ public class Patrol : MonoBehaviour
 		{
             //set a timer that makes it so that enemy has to wait f seconds before colliding again
             //call player damage()
-            _player.Damage();
-            print("collided with player");
+            if(!_isHurt)
+			{
+                _isHurt = true;
+                _player.Damage();
+                StartCoroutine(DamageCooldownCoroutine());
+            }
+                
 		}
+	}
+    IEnumerator DamageCooldownCoroutine()
+	{
+        yield return new WaitForSeconds(_damageCooldown);
+        _isHurt = false;
 	}
 	private void FixedUpdate()
 	{

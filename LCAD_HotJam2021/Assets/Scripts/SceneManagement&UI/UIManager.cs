@@ -38,5 +38,9 @@ public class UIManager : MonoBehaviour
 	{
 		_OnPlayerDeathPanel.SetActive(true);
 	}
-
+	public void LoadLevelByName(string name)
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadScene(name);
+	}
 }
