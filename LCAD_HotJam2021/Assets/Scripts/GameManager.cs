@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
 	private HealthMana _HM;
 
 	[SerializeField]
-	private int health;
+	private  int health;
 	[SerializeField]
-	private int mana;
+	private  int mana;
 
 
 	public static GameManager instance;
@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
 		}
 
 		DontDestroyOnLoad(gameObject);
+
+		PlayerPrefs.SetInt("Health", health);
+		PlayerPrefs.SetInt("Mana", mana);
 	}
 	private void Start()
 	{
@@ -36,9 +39,21 @@ public class GameManager : MonoBehaviour
 		_HM = GameObject.Find("Player").GetComponent<HealthMana>();
 		if (_HM == null) Debug.LogError("HM is null");
 
-		_HM.SetHealthMana(health, mana);
+		
+
+		//_HM.SetHealthMana(health, mana);
 		_UIM.SetValues(health,mana);
 	}
+	public void loadPlayerValues()
+	{
+		_UIM.SetValues(PlayerPrefs.GetInt("Health"), PlayerPrefs.GetInt("Mana"));
+	}/*
+	public void SetPlayerValues()
+	{
+		print("setplayervalues");
+		_HM.SetHealthMana(health, mana);
+		_UIM.SetValues(health, mana);
+	}*/
 	public void OnPlayerDeath()
 	{
 		print("Player Has Died");
@@ -50,9 +65,12 @@ public class GameManager : MonoBehaviour
 		print("PuzzleComplete:" + puzzleNum);
 		switch(puzzleNum)
 		{
+			//use 1 mana
+			//activate overlay
+			//activate transitional narrative for p1
+
 			case 1://puzzle1
-				   //update checkpoint to puzzle1
-				   //add lives || mana for player
+				   
 				break;
 			case 2://puzzle2
 				break;

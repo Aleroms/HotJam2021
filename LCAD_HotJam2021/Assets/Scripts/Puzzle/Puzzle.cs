@@ -22,9 +22,11 @@ public class Puzzle : MonoBehaviour
 	}
 	private void OnMouseDown()
 	{
+		print("onMouseDown");
 		if(!_isComplete)
 		{
 			transform.Rotate(0f, 0f, 90f);
+			print("going to puzzle manager");
 			_pm.UpdatePuzzle(ID);
 		}
 	}

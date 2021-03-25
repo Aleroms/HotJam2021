@@ -20,7 +20,7 @@ public class CaveLogic : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.E) && _insideTrigger && !_isSolved)
 		{
-			print("working");
+			//print("working");
 			_puzzle.SetActive(true);
 		}
 	}
@@ -29,7 +29,7 @@ public class CaveLogic : MonoBehaviour
 		//player enters activation zone
 		if(collision.CompareTag("Player"))
 		{
-			print("Activate Rune");
+			//print("Activate Rune");
 			_insideTrigger = true;
 			_activateText.SetActive(true);
 

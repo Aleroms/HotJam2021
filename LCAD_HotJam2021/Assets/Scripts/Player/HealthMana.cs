@@ -5,12 +5,15 @@ using UnityEngine;
 public class HealthMana : MonoBehaviour
 {
 	
-	private int _health = 5;
-	private int _mana = 3;
+	private  int _health = 5;
+	private  int _mana = 3;
 
 	private GameManager _gm;
 	private UIManager _UIM;
 	private AudioManager _AM;
+
+
+	
 	private void Start()
 	{
 		_gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -21,6 +24,9 @@ public class HealthMana : MonoBehaviour
 
 		_AM = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		if (_AM == null) Debug.LogError("audio manager is null");
+
+		_health = PlayerPrefs.GetInt("Health");
+		_mana = PlayerPrefs.GetInt("Mana");
 	}
 	public void Damage()
 	{
@@ -28,14 +34,18 @@ public class HealthMana : MonoBehaviour
 		//update UIManager
 		//check to see if health = 0; update GameManager
 
-		//FindObjectOfType<AudioManager>().Play("PlayerDamage");
+		
 		_AM.Play("PlayerDamage");
 
 		_health -= 1;
 		print("Current Health: " + _health);
 
 		if(_health > -1)
+		{
 			_UIM.UpdatePlayerHealth(_health);
+			PlayerPrefs.SetInt("Health", _health);
+			//CarryOverPlayerInfo.health = _health;
+		}
 
 		if(_health < 1)
 		{
@@ -52,7 +62,11 @@ public class HealthMana : MonoBehaviour
 		_mana -= 1;
 		print("Current Mana:" + _mana);
 		if(_mana > -1)
+		{
+			PlayerPrefs.SetInt("Mana", _mana);
 			_UIM.UpdatePlayerMana(_mana);
+
+		}
 
 		if(_mana < 1)
 		{

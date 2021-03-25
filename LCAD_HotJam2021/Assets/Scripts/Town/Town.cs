@@ -9,10 +9,16 @@ public class Town : SceneLoaderStuff
 
     public Transform cave1, cave2, cave3;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        print(caveID);
+        //FindObjectOfType<GameManager>().SetPlayerValues();
+        //FindObjectOfType<UIManager>().SetValues(health, mana);
+        
+
+        //print(caveID);
 
         switch(SceneLoaderStuff.caveID)
 		{

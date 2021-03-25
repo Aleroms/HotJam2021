@@ -19,7 +19,20 @@ public class UIManager : MonoBehaviour
 	[SerializeField]
 	private GameObject _OnPlayerDeathPanel;
 
-	
+	public static UIManager instance;
+
+	private void Awake()
+	{
+		if (instance == null)
+			instance = this;
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+
+		DontDestroyOnLoad(gameObject);
+	}
 	public void SetValues(int h, int m)
 	{
 		_healthDisplay.sprite = _health[h];

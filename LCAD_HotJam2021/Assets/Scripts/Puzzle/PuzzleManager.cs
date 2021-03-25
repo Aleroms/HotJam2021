@@ -7,10 +7,11 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]//used for checkpoints
     private bool puzzle1 = false, puzzle2 = false, puzzle3 = false;
 
-	[SerializeField]
-	private Transform[] puzzle1Arr, puzzle2Arr, puzzle3Arr;
+	//[SerializeField]
+	//private Transform[] puzzle1Arr, puzzle2Arr, puzzle3Arr;
 
 	private GameManager _gm;
+	private PuzzleChecker _puzzleChecker;
 
 	public static PuzzleManager instance;
 
@@ -31,56 +32,35 @@ public class PuzzleManager : MonoBehaviour
 	{
 		_gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		if (_gm == null) Debug.LogError("gm is null");
+
+		_puzzleChecker = GameObject.Find("PuzzleChecker").GetComponent<PuzzleChecker>();
+		if (_puzzleChecker == null) Debug.LogError("puzzlechecker is null");
 	}
 	public void UpdatePuzzle(int id)
 	{
 		FindObjectOfType<AudioManager>().Play("Puzzle");
-		CheckPuzzles(id);
-	}
-	private void CheckPuzzles(int id)
-	{
 
-		
-		if (puzzle1Arr[0].rotation.z == 0 &&
-			puzzle1Arr[1].rotation.z == 0 &&
-			puzzle1Arr[2].rotation.z == 0 &&
-			puzzle1Arr[3].rotation.z == 0 &&
-			id == 1)
+		if(_puzzleChecker.CheckPuzzle())
 		{
+			switch(id)
+			{
+				case 1:
+					puzzle1 = true;
+					break;
+				case 2:
+					puzzle2 = true;
+					break;
+				case 3:
+					puzzle3 = true;
+					break;
+
+			}
 			print("puzzle complete >> PuzzleManager");
-			puzzle1 = true;
+			
+			_puzzleChecker.PuzzleWin();
 			NotifyGM();
-			PuzzleWin(puzzle1);
+			
 		}
-
-
-		if (puzzle1Arr[0].rotation.z == 0 &&
-			puzzle1Arr[1].rotation.z == 0 &&
-			puzzle1Arr[2].rotation.z == 0 &&
-			puzzle1Arr[3].rotation.z == 0 &&
-			id == 2)
-		{
-			print("puzzle complete >> PuzzleManager");
-			puzzle2 = true;
-			NotifyGM();
-			PuzzleWin(puzzle2);
-		}
-
-
-		if (puzzle1Arr[0].rotation.z == 0 &&
-			puzzle1Arr[1].rotation.z == 0 &&
-			puzzle1Arr[2].rotation.z == 0 &&
-			puzzle1Arr[3].rotation.z == 0 &&
-			id == 3)
-		{
-			print("puzzle complete >> PuzzleManager");
-			puzzle3 = true;
-			NotifyGM();
-			PuzzleWin(puzzle3);
-		}
-
-
-
 	}
 
 	private void NotifyGM()
@@ -101,7 +81,56 @@ public class PuzzleManager : MonoBehaviour
 			FindObjectOfType<CaveLogic>().PuzzleComplete();
 		}
 	}
-	private void PuzzleWin(bool id)
+	
+
+}
+//Graveyard code
+/*
+ /*if(puzzle1Arr[0] != null)
+		{
+			if (puzzle1Arr[0].rotation.z == 0 &&
+			puzzle1Arr[1].rotation.z == 0 &&
+			puzzle1Arr[2].rotation.z == 0 &&
+			puzzle1Arr[3].rotation.z == 0 &&
+			id == 1)
+			{
+				print("puzzle complete >> PuzzleManager");
+				puzzle1 = true;
+				NotifyGM();
+				PuzzleWin(puzzle1);
+			}
+		}
+		if(puzzle2Arr[0] != null)
+		{
+			if (puzzle2Arr[0].rotation.z == 0 &&
+			puzzle2Arr[1].rotation.z == 0 &&
+			puzzle2Arr[2].rotation.z == 0 &&
+			puzzle2Arr[3].rotation.z == 0 &&
+			id == 2)
+			{
+				print("puzzle complete >> PuzzleManager");
+				puzzle2 = true;
+				NotifyGM();
+				PuzzleWin(puzzle2);
+			}
+		}
+		if(puzzle3Arr[0] != null)
+		{
+			print("puzzle3");
+			if (puzzle3Arr[0].rotation.z == 0 &&
+			puzzle3Arr[1].rotation.z == 0 &&
+			puzzle3Arr[2].rotation.z == 0 &&
+			puzzle3Arr[3].rotation.z == 0 &&
+			id == 3)
+			{
+				print("puzzle complete >> PuzzleManager");
+				puzzle3 = true;
+				NotifyGM();
+				PuzzleWin(puzzle3);
+			}
+		}
+
+ private void PuzzleWin(bool id)
 	{
 		//lock the puzzle piece so player cannot press on it after completion
 
@@ -129,8 +158,6 @@ public class PuzzleManager : MonoBehaviour
 		
 		
 	}
-}
-//Graveyard code
-/*
  
  */
+
