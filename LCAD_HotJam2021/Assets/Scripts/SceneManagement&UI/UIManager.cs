@@ -107,11 +107,6 @@ public class UIManager : MonoBehaviour
 		
 		StartCoroutine(CrossFadeCoroutine(_crossFadeDuration));
 		
-		//idk there's a bug here with the bottom code
-		/*
-		 print("puzNum" + puzNum);
-		
-		 */
 
 	}
 	IEnumerator CrossFadeCoroutine(float duration)
@@ -120,5 +115,10 @@ public class UIManager : MonoBehaviour
 		_GameplayPanel.SetActive(true);
 		_narrationText.gameObject.SetActive(false);
 		FindObjectOfType<CrossFade>().MakeTransition();
+	}
+	public void GameoverUI()
+	{
+		_GameplayPanel.SetActive(false);
+		Overlay3.SetActive(false);
 	}
 }

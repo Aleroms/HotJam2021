@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 	private  int mana;
 	private int puzzleCounterComplete;
 
+	public bool _isGameOver;
 
 	public static GameManager instance;
 
@@ -47,17 +48,12 @@ public class GameManager : MonoBehaviour
 		//_HM.SetHealthMana(health, mana);
 		_UIM.SetValues(health,mana);
 		puzzleCounterComplete = 0;
+		_isGameOver = false;
 	}
 	public void loadPlayerValues()
 	{
 		_UIM.SetValues(PlayerPrefs.GetInt("Health"), PlayerPrefs.GetInt("Mana"));
-	}/*
-	public void SetPlayerValues()
-	{
-		print("setplayervalues");
-		_HM.SetHealthMana(health, mana);
-		_UIM.SetValues(health, mana);
-	}*/
+	}
 	public void OnPlayerDeath()
 	{
 		print("Player Has Died");
@@ -75,8 +71,18 @@ public class GameManager : MonoBehaviour
 		puzzleCounterComplete++;
 		_UIM.ToggleOverlay(puzzleCounterComplete);
 
-
+		if (puzzleCounterComplete == 3)//Game Over
+			_isGameOver = true;
 		
+	}
+	public void Gameover()
+	{
+		if (_isGameOver)
+		{
+			_UIM.GameoverUI();
+			_UIM.LoadLevelByName("Credits");
+
+		}
 	}
 	
 }
