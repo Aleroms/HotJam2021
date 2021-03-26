@@ -15,7 +15,9 @@ public class UIManager : MonoBehaviour
 	private Sprite[] _health;
 	[SerializeField]
 	private Sprite[] _mana;
-
+	
+	[SerializeField]
+	private GameObject Overlay1, Overlay2, Overlay3;
 	[SerializeField]
 	private GameObject _OnPlayerDeathPanel;
 
@@ -55,5 +57,20 @@ public class UIManager : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		SceneManager.LoadScene(name);
+	}
+	public void ToggleOverlay(int id)
+	{
+		if(id == 1)
+		{
+			Overlay1.SetActive(true);
+		}else if(id == 2)
+		{
+			Overlay1.SetActive(false);
+			Overlay2.SetActive(true);
+		}else if(id == 3)
+		{
+			Overlay2.SetActive(false);
+			Overlay3.SetActive(true);
+		}
 	}
 }

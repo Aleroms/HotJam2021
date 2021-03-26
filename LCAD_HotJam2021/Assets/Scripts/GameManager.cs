@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
 {
 	private UIManager _UIM;
 	private HealthMana _HM;
+	private AudioManager _AM;
 
 	[SerializeField]
 	private  int health;
 	[SerializeField]
 	private  int mana;
+	private int puzzleCounterComplete = 0;
 
 
 	public static GameManager instance;
@@ -39,7 +41,8 @@ public class GameManager : MonoBehaviour
 		_HM = GameObject.Find("Player").GetComponent<HealthMana>();
 		if (_HM == null) Debug.LogError("HM is null");
 
-		
+		_AM = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+		if (_AM == null) Debug.LogError("audio manager is null");
 
 		//_HM.SetHealthMana(health, mana);
 		_UIM.SetValues(health,mana);
@@ -63,23 +66,14 @@ public class GameManager : MonoBehaviour
 	public void PuzzleComplete(int puzzleNum)
 	{
 		print("PuzzleComplete:" + puzzleNum);
-		switch(puzzleNum)
-		{
-			//use 1 mana
-			//activate overlay
-			//activate transitional narrative for p1
+		
+		_HM.UseMana();
+		_AM.Play("PlayerDamage");
+		puzzleCounterComplete++;
+		_UIM.ToggleOverlay(puzzleCounterComplete);
 
-			case 1://puzzle1
-				   
-				break;
-			case 2://puzzle2
-				break;
-			case 3://puzzle3
-				break;
-			default:
-				Debug.LogError(puzzleNum + "Not found");
-				break;
-		}
+
+		
 	}
 	
 }
