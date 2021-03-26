@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
 		_HM.UseMana();
 		_AM.Play("PlayerDamage");
 		puzzleCounterComplete++;
+		_UIM.CrossFade(puzzleNum);
 		_UIM.ToggleOverlay(puzzleCounterComplete);
 
 
