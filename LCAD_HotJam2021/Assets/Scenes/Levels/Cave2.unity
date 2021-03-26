@@ -1664,6 +1664,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7332478509750740734, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332478509750740734, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332478509750740734, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 7332478510160410297, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1711,6 +1723,22 @@ PrefabInstance:
     - target: {fileID: 7332478510160410298, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
       propertyPath: m_Name
       value: puzzle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332478510160410298, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332478510325646453, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332478510325646453, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332478510325646453, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d9650bfc714a140bc9e61c9b5a7c0f, type: 3}

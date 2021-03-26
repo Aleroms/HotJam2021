@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float _playerSpeed = 5f;
-    
+
     private Rigidbody2D _rb;
 
     private Vector2 movement;
@@ -14,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
 
     private AudioSource _audioSource;
+
+    [SerializeField]
+    private AudioClip _town;
+    [SerializeField]
+    private AudioClip _caves;
 
     private bool _isMoving = false;
 
@@ -25,14 +31,14 @@ public class PlayerMovement : MonoBehaviour
         if (_audioSource == null) Debug.LogError("audio src null");
     }
 
-	private void Update()
-	{
+    private void Update()
+    {
         //used to register input
         Movement();
-            
-	}
+
+    }
     private void Movement()
-	{
+    {
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -49,14 +55,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (_isMoving)
         {
+            if (SceneManager.GetActiveScene().name == "Town")
+                _audioSource.clip = _town;
+            else
+                _audioSource.clip = _caves;
+
             if (!_audioSource.isPlaying)
+            {
                 _audioSource.Play();
+            }
         }
         else
             _audioSource.Stop();
     }
-	// Update is called once per frame
-	private void FixedUpdate()
+    // Update is called once per frame
+    private void FixedUpdate()
     {
         //used for physics
         _rb.MovePosition(_rb.position + movement * _playerSpeed * Time.fixedDeltaTime);
