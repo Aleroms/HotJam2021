@@ -66,6 +66,7 @@ public class PuzzleManager : MonoBehaviour
 
 	private void NotifyGM()
 	{
+		
 		if (puzzle1)
 		{
 			_gm.PuzzleComplete(1);
@@ -81,6 +82,7 @@ public class PuzzleManager : MonoBehaviour
 			_gm.PuzzleComplete(3);
 			FindObjectOfType<CaveLogic>().PuzzleComplete();
 		}
+		
 	}
 	
 

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 	private  int health;
 	[SerializeField]
 	private  int mana;
-	private int puzzleCounterComplete = 0;
+	private int puzzleCounterComplete;
 
 
 	public static GameManager instance;
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
 		//_HM.SetHealthMana(health, mana);
 		_UIM.SetValues(health,mana);
+		puzzleCounterComplete = 0;
 	}
 	public void loadPlayerValues()
 	{
@@ -65,12 +66,13 @@ public class GameManager : MonoBehaviour
 	}
 	public void PuzzleComplete(int puzzleNum)
 	{
+		print(puzzleCounterComplete);
 		print("PuzzleComplete:" + puzzleNum);
 		
 		_HM.UseMana();
 		_AM.Play("PlayerDamage");
+		_UIM.CrossFade(puzzleCounterComplete);//puznum
 		puzzleCounterComplete++;
-		_UIM.CrossFade(puzzleNum);
 		_UIM.ToggleOverlay(puzzleCounterComplete);
 
 

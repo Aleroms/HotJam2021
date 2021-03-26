@@ -5,11 +5,14 @@ using UnityEngine;
 public class CrossFade : MonoBehaviour
 {
     private Animator _crossFade;
+    private UIManager _UIM;
     // Start is called before the first frame update
     void Start()
     {
         _crossFade = GameObject.FindGameObjectWithTag("CrossFade").GetComponent<Animator>();
         if (_crossFade == null) Debug.LogError("crossfade is null");
+
+        
     }
 
     // Update is called once per frame

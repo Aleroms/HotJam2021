@@ -38,7 +38,7 @@ public class HealthMana : MonoBehaviour
 		_AM.Play("PlayerDamage");
 
 		_health -= 1;
-		print("Current Health: " + _health);
+		//print("Current Health: " + _health);
 
 		if(_health > -1)
 		{
@@ -60,7 +60,7 @@ public class HealthMana : MonoBehaviour
 		//update UI
 
 		_mana -= 1;
-		print("Current Mana:" + _mana);
+		//print("Current Mana:" + _mana);
 		if(_mana > -1)
 		{
 			PlayerPrefs.SetInt("Mana", _mana);

@@ -41,7 +41,7 @@ public class CaveLogic : MonoBehaviour
 		//player leaves activation zone
 		if (collision.CompareTag("Player"))
 		{
-			print("Leaving trigger zone");
+			//print("Leaving trigger zone");
 			_insideTrigger = false;
 			_activateText.SetActive(false);
 			_puzzle.SetActive(false);
@@ -49,7 +49,7 @@ public class CaveLogic : MonoBehaviour
 	}
 	public void PuzzleComplete()
 	{
-		print("puzzlecomplete");
+		//print("puzzlecomplete");
 		_puzzleComplete.SetActive(true);
 		_caveSolved.SetActive(true);
 		_activateText.SetActive(false);

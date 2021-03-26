@@ -37,12 +37,12 @@ public class EnterExitCave : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Q) && _insideTrigger)
 		{
-			print("health" + CarryOverPlayerInfo.health);
+			//print("health" + CarryOverPlayerInfo.health);
 			FindObjectOfType<UIManager>().UpdatePlayerHealth(CarryOverPlayerInfo.health);
 
 			loaderStuff.PlayerPosition(_player, _caveID);
 
-			print("playerID" + _player.position + "\nCaveID:" + _caveID);
+			//print("playerID" + _player.position + "\nCaveID:" + _caveID);
 
 			_gm.loadPlayerValues();
 			

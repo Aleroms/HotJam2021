@@ -974,16 +974,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0728472912f2f5d4d9e3c9d35bb3913b, type: 3}
   - {fileID: 21300000, guid: 79da9d870d2d9f2459530d841497823f, type: 3}
   - {fileID: 21300000, guid: b8b33ade0ef1dd5489cfb610f5a20ba0, type: 3}
-  _narrationText: {fileID: 520563698448436831}
   narrative_txt:
-  - The shadows beckons...
+  - The shadows beckon...
   - The madness boils over...
   - Walk into the ocean...
+  _narrationText: {fileID: 520563698448436831}
+  _crossFadeDuration: 2.3
   _CrossFade: {fileID: 0}
   Overlay1: {fileID: 8158844938638568311}
   Overlay2: {fileID: 7580977826842542304}
   Overlay3: {fileID: 5936647613127073066}
   _OnPlayerDeathPanel: {fileID: 3934938428523972293}
+  _GameplayPanel: {fileID: 3934938429295128413}
 --- !u!223 &3934938430378399757
 Canvas:
   m_ObjectHideFlags: 0
