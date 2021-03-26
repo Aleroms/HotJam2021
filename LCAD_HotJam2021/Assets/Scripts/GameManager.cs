@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
 		PlayerPrefs.SetInt("Health", health);
 		PlayerPrefs.SetInt("Mana", mana);
+		PlayerPrefs.SetInt("Gameover", -1);
 	}
 	private void Start()
 	{
@@ -72,7 +73,10 @@ public class GameManager : MonoBehaviour
 		_UIM.ToggleOverlay(puzzleCounterComplete);
 
 		if (puzzleCounterComplete == 3)//Game Over
+		{
+			PlayerPrefs.SetInt("Gameover", 1);
 			_isGameOver = true;
+		}
 		
 	}
 	public void Gameover()

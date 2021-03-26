@@ -105,13 +105,17 @@ public class UIManager : MonoBehaviour
 			_narrationText.text = narrative_txt[2];
 
 		
-		StartCoroutine(CrossFadeCoroutine(_crossFadeDuration));
+		StartCoroutine(CrossFadeCoroutine(_crossFadeDuration,puzNum));
 		
 
 	}
-	IEnumerator CrossFadeCoroutine(float duration)
+	IEnumerator CrossFadeCoroutine(float duration,int pN)
 	{
 		yield return new WaitForSeconds(duration);
+
+		if(pN == 2)
+			GameObject.Find("Player").GetComponent<Animator>().SetTrigger("GameOver");
+
 		_GameplayPanel.SetActive(true);
 		_narrationText.gameObject.SetActive(false);
 		FindObjectOfType<CrossFade>().MakeTransition();
