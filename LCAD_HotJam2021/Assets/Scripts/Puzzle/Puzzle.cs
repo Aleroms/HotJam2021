@@ -9,7 +9,7 @@ public class Puzzle : MonoBehaviour
 
 	private PuzzleManager _pm;
 
-	private bool _isComplete = false;
+	public bool _isComplete = false;
 
 	private float[] _randRotation = {90,180,270 };
 

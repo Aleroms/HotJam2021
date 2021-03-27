@@ -88,5 +88,28 @@ public class GameManager : MonoBehaviour
 
 		}
 	}
-	
+	public void ResetPlayerRetry()
+	{
+		PlayerPrefs.SetInt("Health", health);
+		PlayerPrefs.SetInt("Mana", mana);
+		PlayerPrefs.SetInt("Gameover", -1);
+		puzzleCounterComplete = 0;
+		_UIM.ResetPlayer();
+		LoadLevelByName2("Town");
+	}
+	public void ResetPlayerMainMenu()
+	{
+		PlayerPrefs.SetInt("Health", health);
+		PlayerPrefs.SetInt("Mana", mana);
+		PlayerPrefs.SetInt("Gameover", -1);
+		puzzleCounterComplete = 0;
+		_UIM.ResetPlayer();
+		LoadLevelByName2("MainMenu");
+	}
+	public void LoadLevelByName2(string name)
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadScene(name);
+	}
+
 }

@@ -125,4 +125,8 @@ public class UIManager : MonoBehaviour
 		_GameplayPanel.SetActive(false);
 		Overlay3.SetActive(false);
 	}
+	public void ResetPlayer()
+	{
+		Destroy(gameObject);
+	}
 }

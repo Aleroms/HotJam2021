@@ -198,22 +198,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.294315, y: 11.867554}
   m_EdgeRadius: 0
---- !u!1 &55659858 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3934938430378399752, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
-  m_PrefabInstance: {fileID: 206138589}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &55659862 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3934938430378399756, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
-  m_PrefabInstance: {fileID: 206138589}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55659858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a68f7e5a854e0ed4f98631f0673862bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &55659863 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3934938430378399759, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
@@ -623,6 +607,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.95, y: 0.20711836}
   m_EdgeRadius: 0
+--- !u!114 &171386970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7366523111674655549, guid: 426567826599a464f95f851d25046eba, type: 3}
+  m_PrefabInstance: {fileID: 1944241948}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46869e6625e45c2489ccf9ab43cf3aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &206138589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,29 +625,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3934938428523972293, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3934938428523972294, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3934938428717101136, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934938428717101136, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 55659862}
+      objectReference: {fileID: 171386970}
     - target: {fileID: 3934938428717101136, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevelByName
+      value: ResetPlayerMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 3934938428717101136, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIManager, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934938429572559148, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
+      propertyPath: m_Name
+      value: RetryButton
       objectReference: {fileID: 0}
     - target: {fileID: 3934938429572559150, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 55659858}
+      objectReference: {fileID: 171386970}
     - target: {fileID: 3934938429572559150, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ResetPlayerRetry
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934938429572559150, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3934938430378399752, guid: 9a2fbc9279a6d564088c5d7583c0b2e2, type: 3}
       propertyPath: m_Name
