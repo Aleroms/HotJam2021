@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pinkTorch
+  m_Name: pinktorch
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 36188f5874485ad40a5627b4c8b3a4b6, type: 3}
+      value: {fileID: 21300000, guid: 2d35e1a7b671f4044a29471027bd90cf, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: d68c145af746e4c4da5f7916ae8eea84, type: 3}
+      value: {fileID: 21300000, guid: 858e628f4cac6624b8f0485c3445cf2f, type: 3}
     - time: 0.6666667
-      value: {fileID: 21300000, guid: 39ca378d7cce15847a2029d317d5750c, type: 3}
+      value: {fileID: 21300000, guid: 257f04c357bd4994b8716a994233b5e0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 36188f5874485ad40a5627b4c8b3a4b6, type: 3}
-    - {fileID: 21300000, guid: d68c145af746e4c4da5f7916ae8eea84, type: 3}
-    - {fileID: 21300000, guid: 39ca378d7cce15847a2029d317d5750c, type: 3}
+    - {fileID: 21300000, guid: 2d35e1a7b671f4044a29471027bd90cf, type: 3}
+    - {fileID: 21300000, guid: 858e628f4cac6624b8f0485c3445cf2f, type: 3}
+    - {fileID: 21300000, guid: 257f04c357bd4994b8716a994233b5e0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
